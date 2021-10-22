@@ -1,1 +1,0 @@
-run: python bot.py

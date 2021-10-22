@@ -16,15 +16,17 @@ def run():
     SELL_ORDER = None
 
     INCREMENTOR = 0
-
+    DIFF = ""
 
     while True:
-        if INCREMENTOR == 12: INCREMENTOR = 0
+        if INCREMENTOR == 18: INCREMENTOR = 0
 
 
         current_price = get_price_by_coin_pair(pair=MARKET_PAIR)
+        if SELL_ORDER is not None:
+            DIFF = " | SELL LIMIT ORDER DIFF: ({}%)".format(str(round((current_price - SELL_ORDER['initial_buy_price'])/SELL_ORDER['initial_buy_price']*100, 2)))
         print("-----------------------------------------------")
-        print("1 {} = {} {}".format(COIN, current_price, CURRENCY))
+        print("1 {} = {} {} {}".format(COIN, current_price, CURRENCY, DIFF))
         print("FIAT BALANCE = {} {}".format(str(FIAT_BALANCE), CURRENCY))
         print("CRYPTO BALANCE = {} {}".format(str(CRYPTO_BALANCE), COIN))
         print("TOTAL BALANCE = {} {}".format(str(FIAT_BALANCE + CRYPTO_BALANCE * current_price), CURRENCY))
@@ -44,7 +46,7 @@ def run():
 
             sell_price, FIAT_BALANCE, CRYPTO_BALANCE = sell_output
 
-        if INCREMENTOR % 6 == 0:
+        if INCREMENTOR % 18 == 0:
             candle_sticks = fetch_olhcv_candles_dataframe(
                 symol="BNB/USDT",
                 timeframe="3m",
@@ -87,7 +89,7 @@ def run():
                     pair=MARKET_PAIR
                 )
 
-        time.sleep(30)
+        time.sleep(10)
         INCREMENTOR += 1
 
 
