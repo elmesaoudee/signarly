@@ -25,6 +25,9 @@ def run():
         current_price = get_price_by_coin_pair(pair=MARKET_PAIR)
         if SELL_ORDER is not None:
             DIFF = " | SELL LIMIT ORDER DIFF: ({}%)".format(str(round((current_price - SELL_ORDER['initial_buy_price'])/SELL_ORDER['initial_buy_price']*100, 2)))
+        else:
+            DIFF = ""
+
         print("-----------------------------------------------")
         print("1 {} = {} {} {}".format(COIN, current_price, CURRENCY, DIFF))
         print("FIAT BALANCE = {} {}".format(str(FIAT_BALANCE), CURRENCY))
