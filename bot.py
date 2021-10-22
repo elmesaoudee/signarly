@@ -6,11 +6,11 @@ from technical_analysis import fetch_olhcv_candles_dataframe, is_indicator_on_up
 
 
 def run():
-    COIN = "BTC"
+    COIN = "BNB"
     CURRENCY = "USDT"
     MARKET_PAIR = "{}/{}".format(COIN, CURRENCY)
 
-    FIAT_BALANCE = 10000.0
+    FIAT_BALANCE = 2000.0
     CRYPTO_BALANCE = 0.0
 
     SELL_ORDER = None
@@ -38,6 +38,9 @@ def run():
                 CRYPTO_BALANCE,
                 pair=MARKET_PAIR
             )
+
+            if SELL_ORDER is None:
+                time.sleep(30)
 
             sell_price, FIAT_BALANCE, CRYPTO_BALANCE = sell_output
 
