@@ -3,9 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from constants import OHLCV_COLS
-
-exchange = ccxt.binance()
+from utils.constants import OHLCV_COLS
 
 
 class BinanceAPICallException(Exception):
@@ -14,6 +12,9 @@ class BinanceAPICallException(Exception):
 
 class IndicatorNotFoundException(Exception):
     pass
+
+
+exchange = ccxt.binance()
 
 
 def get_price_by_coin_pair(pair: str = "BTC/USDT") -> float:
@@ -119,10 +120,3 @@ def is_ema_losing_momentum(candles: pd.DataFrame, emas: list) -> bool:
             return True
 
     return False
-
-
-#candle_sticks = fetch_olhcv_candles_dataframe(emas=[7, 20, 50])
-#print(candle_sticks)
-#print(is_indicator_on_uptrend(candle_sticks, emas=[7, 20, 50], steps=5, plot=True))
-#print(is_ema_picking_momentum(candle_sticks, emas=[7, 20, 50]))
-#print(is_ema_losing_momentum(candle_sticks, emas=[7, 20, 50]))
