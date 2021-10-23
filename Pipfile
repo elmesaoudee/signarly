@@ -8,6 +8,7 @@ numpy = "*"
 pandas = "*"
 ccxt = "*"
 matplotlib = "*"
+pyfiglet = "*"
 
 [dev-packages]
 
