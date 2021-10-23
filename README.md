@@ -15,11 +15,10 @@ P.S Signarly is currently on a dry run (mirroring the market). Watch for the upc
 ```Python
     pip install pipenv
 ```
-#### - Access project director
+#### - Install requirements
 ```Python
     cd signarly/
 ```
-#### - Install requirements
 ```Python
     pipenv shell
 ```
