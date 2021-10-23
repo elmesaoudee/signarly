@@ -21,6 +21,9 @@ P.S Signarly is currently on a dry run (mirroring the market). Watch for the upc
 ```
 #### - Install requirements
 ```Python
+    pipenv shell
+```
+```Python
     pipenv install
 ```
 ##Usage
