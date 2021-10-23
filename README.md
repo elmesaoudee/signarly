@@ -9,7 +9,7 @@
 Signarly is a cryptocurrency trading bot.
 
 P.S Signarly is currently on a dry run (mirroring the market). Watch for the upcoming updates on the next steps section.  
-##Requirements
+## Requirements
 - Python 3.7 or higher.
 #### - Install pipenv
 ```Python
@@ -23,7 +23,7 @@ P.S Signarly is currently on a dry run (mirroring the market). Watch for the upc
 ```Python
     pipenv install
 ```
-##Usage
+## Usage
 ```
 Version - Alpha 1.0.0
 usage: bot.py [-h] [--coin COIN] [--stable-coin STABLE_COIN] [--budget BUDGET] [--gain_percentage GAIN_PERCENTAGE] [--loss_percentage LOSS_PERCENTAGE]
@@ -41,11 +41,11 @@ optional arguments:
   --loss_percentage LOSS_PERCENTAGE
                         Select the price percentage decrease below which you want the bot to cut losses.
 ```
-##Example
+## Example
 ```Python
     python bot.py --coin BNB --stable-coin USDT --budget 2000 --gain_percentage 0.2 --loss_percentage 0.05
 ```
-##Next steps
+## Next steps
 - Add Wallet embeddings
 - Add more technical indicators
 - Add more trading strategies
