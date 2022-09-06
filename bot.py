@@ -32,6 +32,7 @@ class TradingBot:
         sell_order = None
 
         incrementor = 0
+        fixed_balance = stable_coin_balance / get_price_by_coin_pair(pair=market_pair)
 
         while True:
             if incrementor == 18:
@@ -53,6 +54,7 @@ class TradingBot:
                 coin_balance=coin_balance,
                 stable_coin_balance=stable_coin_balance
             )
+            print("HODL BALANCE = {} USDT".format(fixed_balance*current_price))
 
             if sell_order is not None:
                 print("CHECKING SELL LIMIT ORDER")
@@ -115,7 +117,7 @@ class TradingBot:
                         pair=market_pair
                     )
 
-            time.sleep(10)
+            time.sleep(3)
             incrementor += 1
 
 

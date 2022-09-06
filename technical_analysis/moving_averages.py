@@ -74,8 +74,8 @@ def get_series_orientation(series: pd.Series, plot=False) -> (float, list):
 def is_indicator_on_uptrend(
         candles: pd.DataFrame,
         emas: list,
-        steps: int = 10,
-        trend_threshold: float = 0.2,
+        steps: int = 5,
+        trend_threshold: float = 0.1,
         plot=True
 ) -> bool:
 
